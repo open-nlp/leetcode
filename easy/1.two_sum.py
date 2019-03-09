@@ -21,24 +21,24 @@ return [0, 1].
 """
 
 class Solution(object):
-    def twoSum(self, nums, target):
+    def twoSum(self,nums,target):
         """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
+        :param nums: List[int]
+        :param target: int
+        :return: List[int]
         """
-        dic = dict()
+        value_key_dict = dict()
         for index,value in enumerate(nums):
             sub = target - value
-            if sub in dic:
-                return [dic[sub],index]
+            if sub in value_key_dict:
+                return [value_key_dict[sub],index]
             else:
-                dic[value] = index
+                value_key_dict[value] = index
 
 
 if __name__ == '__main__':
     nums = [2,3,4,5]
-    target = 7
+    target = 1
     solution = Solution()
     result = solution.twoSum(nums,target)
     print(result)
